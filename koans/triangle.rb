@@ -14,7 +14,10 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  a,b,c=[a,b,c].sort
+  raise TriangleError.new if a+b<=c
+  unic_count = [a,b,c].uniq.size
+  [nil,:equilateral, :isosceles, :scalene][unic_count]
 end
 
 # Error class used in part 2.  No need to change this code.
